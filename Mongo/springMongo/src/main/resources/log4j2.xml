@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO" monitorInterval="300">
+    <properties>
+        <!-- 日志目录 -->
+        <property name="LOG_ROOT">log</property>
+        <!-- 主日志文件名 -->
+        <property name="FILE_NAME">application</property>
+    </properties>
+    <Appenders>
+        <!-- 控制台输出 -->
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level -%l - %msg%n" />
+        </Console>
+        <!-- 文件输出 -->
+        <RollingRandomAccessFile name="MainFile"
+                                 fileName="${LOG_ROOT}/${FILE_NAME}.log"
+                                 filePattern="${LOG_ROOT}/$${date:yyyy-MM}/${FILE_NAME}-%d{yyyy-MM-dd HH}-%i.log">
+            <PatternLayout
+                    pattern="%d{yyyy-MM-dd HH:mm:ss.SSS} [%t] %-5level -%l - %msg%n" />
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" />
+                <SizeBasedTriggeringPolicy size="50 MB" />
+            </Policies>
+            <DefaultRolloverStrategy max="20" />
+        </RollingRandomAccessFile>
+    </Appenders>
+
+    <Loggers>
+        <!-- org.hscoder 包下面的日志配置-->
+        <Logger name="org.hscoder" level="info" additivity="true"></Logger>
+        <!-- spring data mongodb 日志配置-->
+        <Logger name="org.springframework.data.mongodb" level="info" additivity="true"></Logger>
+
+        <Logger name="org.springframework" level="info" additivity="true"></Logger>
+        <!-- 全局的日志配置 -->
+        <Root level="info">
+            <AppenderRef ref="Console" />
+            <AppenderRef ref="MainFile" />
+        </Root>
+    </Loggers>
+</Configuration>
