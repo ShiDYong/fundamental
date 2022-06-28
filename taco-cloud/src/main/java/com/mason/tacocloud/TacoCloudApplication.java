@@ -2,6 +2,7 @@ package com.mason.tacocloud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 
 /**
  * @description:SpringBoot启动类
