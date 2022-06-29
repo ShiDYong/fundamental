@@ -3,7 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/fundamental.iml" filepath="$PROJECT_DIR$/.idea/fundamental.iml" />
-      <module fileurl="file://$PROJECT_DIR$/taco-cloud/taco-cloud.iml" filepath="$PROJECT_DIR$/taco-cloud/taco-cloud.iml" />
+      <module fileurl="file://$PROJECT_DIR$/taco-cloud-01/taco-cloud-01.iml" filepath="$PROJECT_DIR$/taco-cloud-01/taco-cloud-01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/taco-cloud-02/taco-cloud-02.iml" filepath="$PROJECT_DIR$/taco-cloud-02/taco-cloud-02.iml" />
     </modules>
   </component>
 </project>
